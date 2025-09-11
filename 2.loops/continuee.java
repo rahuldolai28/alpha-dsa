@@ -11,5 +11,6 @@ public class continuee{
             }
             System.out.println(i);
         }
+        sc.close();
     }
 }

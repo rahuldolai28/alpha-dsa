@@ -8,8 +8,8 @@ public class one {
         int n = sc.nextInt();
         // int sum = 0;
         // for (int i = 1; i <= n; i++) {
-        //     System.out.println(i);
-        //     sum = sum + i;
+        // System.out.println(i);
+        // sum = sum + i;
         // }
         // sc.close();
         // System.out.println(sum);
@@ -20,6 +20,6 @@ public class one {
             }
             System.out.println("");
         }
-
+        sc.close();
     }
 }
