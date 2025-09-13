@@ -1,6 +1,5 @@
 public class Butterfly {
     public static void main(String[] args) {
-        int num = 7;
         int row = 8;
         for (int i = 0; i <= 3; i++) {
 
