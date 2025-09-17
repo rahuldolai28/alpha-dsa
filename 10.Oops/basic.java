@@ -1,4 +1,4 @@
-public class basic{
+public class basic {
     public static void main(String[] args) {
         Pen p1 = new Pen();
         p1.setColor("Blue");
@@ -8,7 +8,6 @@ public class basic{
     }
 }
 
-
 class Pen {
     int tip;
     String color;
@@ -17,8 +16,16 @@ class Pen {
         color = newColor;
     }
 
+    String getColor() {
+        return this.color;
+    }
+
     void setTip(int newTip) {
         tip = newTip;
+    }
+
+    int getTip() {
+        return this.tip;
     }
 }
 
@@ -27,7 +34,7 @@ class Student {
     int age;
     float percentage;
 
-    void calculatePer(int phy, int chem, int math ){
-        percentage = (phy+chem+math)/3 *100;
+    void calculatePer(int phy, int chem, int math) {
+        percentage = (phy + chem + math) / 3 * 100;
     }
 }
