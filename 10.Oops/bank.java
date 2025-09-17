@@ -5,6 +5,7 @@ public class bank {
 
         System.out.println(sbi.username);
         System.out.println(sbi.setPassword("sbi"));
+        account a1 = new account();
     }
 }
 
@@ -16,4 +17,9 @@ class account {
         password = pwd;
         return password;
     }
+
+    public account() {
+        System.out.println("account constructor was called");
+    }
+    
 }
