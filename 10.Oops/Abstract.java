@@ -7,7 +7,6 @@ public class Abstract {
         c.eat();
         c.walk();
         h.ChangeColor();
-        System.out.println(h.color);
 
 
         // Can't create
