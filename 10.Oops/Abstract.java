@@ -6,7 +6,7 @@ public class Abstract {
         h.walk();
         c.eat();
         c.walk();
-        h.ChangeColor();
+        // h.ChangeColor();
 
 
         // Can't create
