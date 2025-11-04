@@ -3,7 +3,7 @@ public class DiagonalSum {
     public static void sum(int matrix[][]) {
         int primarySum = 0;
         int secondarySum = 0;
-        int totalSum = 0;
+        int totalSum;
         for (int i = 0; i < matrix.length; i++) {
             primarySum += matrix[i][i];
         }
