@@ -25,7 +25,7 @@ public class MergeSort {
         int j = mid + 1; // iteretor for right part;
         int k = 0; // iterortor for temp arr
 
-        while (i <= mid && j <= ei) {
+        while (i <= mid && j <= ei) { //WHEN BOTH HAVE ELEMENTS
             if (arr[i] < arr[j]) {
                 temp[k] = arr[i];
                 i++;
@@ -36,6 +36,7 @@ public class MergeSort {
             k++;
         }
 
+        //FOR REMAINING ELEMENTS
         // left part
         while (i <= mid) {
             temp[k++] = arr[i++];
