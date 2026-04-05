@@ -19,7 +19,7 @@ public class sortStrings {
 
         String[] temp = new String[ei - si + 1]; // size fixed
 
-        while (i <= j && j <= ei) {
+        while (i <= mid && j <= ei) {
             if ((arr[i].compareTo(arr[j])) <= 0) {
                 temp[k] = arr[i];
                 i++;
