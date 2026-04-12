@@ -25,7 +25,7 @@ public class GridWays {
     }
 
     public static void main(String[] args) {
-        int n = 2, m = 3;
+        int n = 3, m = 3;
         int grid[][] = new int[n][m];
 
         System.out.println(ways(grid, 0, 0));
