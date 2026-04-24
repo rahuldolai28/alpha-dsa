@@ -12,7 +12,12 @@ public class Sorting {
         list.add(6);
         System.out.println(list);
 
-        Collections.sort(list);
+        Collections.sort(list); // asceding
+        System.out.println(list);
+
+        // descending
+        Collections.sort(list, Collections.reverseOrder());
+        // comparator ek function hai jo sorting ke logic ko define karta hai
         System.out.println(list);
     }
 }
