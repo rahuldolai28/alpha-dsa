@@ -1,5 +1,5 @@
 public class LinkedList {
-    public class Node {
+    public static class Node {
         int data;
         Node next;
 
@@ -202,7 +202,7 @@ public class LinkedList {
     // Check checkPallindrome
     public boolean checkPallindrome() {
 
-        if (head ==null || head.next==null ) {
+        if (head == null || head.next == null) {
             return true;
         }
 
@@ -236,7 +236,7 @@ public class LinkedList {
         return true;
     }
 
-    // Find mid  SLOW-FAST APPROACH
+    // Find mid SLOW-FAST APPROACH
     public Node findMid(Node head) {
         Node slow = head;
         Node fast = head;
@@ -248,20 +248,70 @@ public class LinkedList {
         return slow;
     }
 
+    // FROM NOW LL 2
+    // detect loop
+    public static boolean isCycle() {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true; // cycle exist
+            }
+
+        }
+        return false;
+    }
+
+    // REMOVE cycle
+    public static void removeCycle() {
+
+        // detect loop
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                cycle = true;
+                break;
+            }
+        }
+        if (cycle == false) {
+            return;
+        }
+
+        // find meeting point
+        slow = head;
+        Node prev = null;
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // remove cycle -> last.next = null
+        prev.next = null;
+
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.print();
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.addLast(2);
-        ll.addLast(1);
+        // ll.print();
+        // ll.addFirst(2);
+        // ll.addFirst(1);
+        // ll.addLast(2);
+        // ll.addLast(1);
+        // ll.print();
 
         // ll.addMiddle(3, 3);
         // ll.addMiddle(0, 0);
         // ll.addMiddle(4, 4);
-
         // System.out.println("again");
-        ll.print();
+        // ll.print();
 
         // System.out.println("The index of key is " + ll.findKey(10));
         // System.out.println("The index of key is " + ll.findKeyRecursively(10));
@@ -273,7 +323,21 @@ public class LinkedList {
         // ll.removeNthFromEnd(3);
         // ll.print();
 
-        System.out.println("Pallindrome is " +ll.checkPallindrome());
-        System.out.println("The size of ll is = " + size);
+        // System.out.println("Pallindrome is " + ll.checkPallindrome());
+        // System.out.println("The size of ll is = " + size);
+
+        // FROM LL 2
+
+        // LET'S CREATE A CYCLE
+        head = new Node(1);
+        head.next = new Node(5);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = head.next;
+        // 1 -> 2 -> 3 -> 4 -> 2
+        // System.out.println(ll.isCycle());
+
+        removeCycle();
+        ll.print();
     }
 }
