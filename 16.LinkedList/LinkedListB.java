@@ -1,4 +1,4 @@
-public class LinkedList {
+public class LinkedListB {
     public static class Node {
         int data;
         Node next;
@@ -131,7 +131,7 @@ public class LinkedList {
         }
         return -1;
     }
-
+ 
     // recursive approach
     public int findKeyRecursively(int key) {
         return helper(head, key);
@@ -299,7 +299,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
+        LinkedListB ll = new LinkedListB();
         // ll.print();
         // ll.addFirst(2);
         // ll.addFirst(1);
