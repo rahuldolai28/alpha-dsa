@@ -1,6 +1,6 @@
 public class Butterfly1 {
      public static void main(String[] args) {
-        int n = 4; // controls half wings
+        int n = 5; // controls half wings
 
         // total rows = 2*n
         for (int i = 0; i < 2 * n; i++) {
