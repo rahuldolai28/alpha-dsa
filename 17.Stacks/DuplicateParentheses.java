@@ -5,9 +5,8 @@ public class DuplicateParentheses {
 
     // Duplicate Parentheses
     // Given a balanced expression, find if it contains duplicate parentheses or
-    // not. A set of
-    // parentheses are duplicate if the same subexpression is surrounded by multiple
-    // parentheses.
+    // not. A set of parentheses are duplicate if the same
+    //  subexpression is surrounded by multiple parentheses.
 
     // Return a true if it contains duplicates else return false.
 
@@ -58,7 +57,7 @@ public class DuplicateParentheses {
         String str3 = "(a+b))";
         String str4 = ")";
 
-        boolean ans = checkDuplicate(str4);
+        boolean ans = checkDuplicate(str2);
 
         System.out.println("Duplicate parentheses present = " + ans);
     }

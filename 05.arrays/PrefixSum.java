@@ -1,5 +1,9 @@
 public class PrefixSum {
-
+    // Prefix Sum: "What is the sum of this range quickly?"
+    // Find maximum subarray sum, Kadane is better.
+    // But if the problem asks:
+    // Answer many range-sum queries quickly
+    // Prefix Sum is extremely useful.
     public static void subArraySum(int num[]) {
         int currSum = 0;
         int maxSum = Integer.MIN_VALUE;
