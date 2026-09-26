@@ -4,17 +4,17 @@ public class StackB {
     static class Stack {
         static ArrayList<Integer> List = new ArrayList<>();
 
-        public static boolean isEmpty() {
+        public  boolean isEmpty() {
             return List.size() == 0;
         }
 
         // PUSH
-        public static void push(int data) {
+        public  void push(int data) {
             List.add(data);
         }
 
         // POP
-        public static int pop() {
+        public  int pop() {
 
             if (isEmpty()) {
                 return -1;
@@ -26,7 +26,7 @@ public class StackB {
         }
 
         // PEEK
-        public static int peek() {
+        public  int peek() {
             if (isEmpty()) {
                 return -1;
             }
