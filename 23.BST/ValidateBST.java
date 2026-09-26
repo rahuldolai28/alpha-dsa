@@ -16,19 +16,25 @@ public class ValidateBST {
         return left && right;
     }
 
-      public static boolean inorderValidation(Node root, long prev) {
-        if (root == null) {
-            return true;
-        }
-        boolean left = inorderValidation(root.left, prev);
-        System.out.print(root.data + " ");
-        if (root.data < prev) {
-            return false;
-        }
-        prev = root.data;
-        boolean right = inorderValidation(root.right, prev);
-        return left && right;
+    //secondary approach
+      public static boolean inorderValidation(Node root, long[] prev) {
+    if (root == null) {
+        return true;
     }
+
+    if (!inorderValidation(root.left, prev)) {
+        return false;
+    }
+
+    if (root.data <= prev[0]) {
+        return false;
+    }
+
+    prev[0] = root.data; // as we only track prev[0] elemnt the sc will be O(1)
+    // total sc  = O(h) due to recursion stack
+
+    return inorderValidation(root.right, prev);
+}
     public static void main(String[] args) {
 
         Node root = new Node(4);
@@ -42,7 +48,7 @@ public class ValidateBST {
         root.right.right.right = new Node(8);
 
         boolean ans = validate(root, Long.MIN_VALUE, Long.MAX_VALUE);
-        boolean ans2 = inorderValidation(root,  Long.MIN_VALUE);
+        boolean ans2 = inorderValidation(root,new long[]{Long.MIN_VALUE});
         System.out.println(ans2);
     }
 }
