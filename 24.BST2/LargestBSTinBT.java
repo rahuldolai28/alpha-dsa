@@ -1,22 +1,42 @@
 public class LargestBSTinBT {
 
-    public static int findLargest(Node root, int min, int max, int ans) {
+    public static class Info {
+        boolean isBST;
+        int size;
+        int min;
+        int max;
+
+        Info(boolean isBST, int size, int min, int max) {
+            this.isBST = isBST;
+            this.size = size;
+            this.min = min;
+            this.max = max;
+
+        }
+    }
+
+    static int maxSize = 0;
+
+    public static Info findLargest(Node root) {
         if (root == null) {
-            return 0;
+            return new Info(true, 0, Integer.MAX_VALUE, Integer.MIN_VALUE);
         }
-        if (root.data >= max || root.data <= min) {
-            return -1;
+        Info left = findLargest(root.left);
+        Info right = findLargest(root.right);
+
+        boolean temp = false;
+        if (left.isBST == true && right.isBST == true && root.data > left.max && root.data < right.min) {
+            temp = true;
         }
-        int left = findLargest(root.left, min, root.data, ans);
-        int right = findLargest(root.right, root.data, max, ans);
-        int temp ;
-        if (left == -1 || right == -1) {
-            temp = 0;
-        } else {
-            temp = left + right + 1;
+        int tempSize = left.size + right.size + 1;
+        int min = Math.min(root.data, Math.min(left.min, right.min));
+        int max = Math.max(root.data, Math.max(left.max, right.max));
+
+        if (temp) {
+            maxSize = Math.max(tempSize, maxSize);
         }
-        ans = Math.max(temp, ans);
-        return ans ;
+        return new Info(temp, tempSize, min, max);
+
     }
 
     public static void main(String[] args) {
@@ -29,7 +49,7 @@ public class LargestBSTinBT {
         root.right.right = new Node(70);
         root.right.right.right = new Node(80);
         root.right.right.left = new Node(65);
-        int ans  = findLargest(root, Integer.MIN_VALUE, Integer.MAX_VALUE, 0);
-        System.out.println(ans);
+        Info ans = findLargest(root);
+        System.out.println(maxSize);
     }
 }
